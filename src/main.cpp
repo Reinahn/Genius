@@ -8,9 +8,14 @@
 #define BOTAO_2 4
 #define BOTAO_3 6
 
-int valores_leds[3] = {};
+#define TOTAL_PARTIDAS 5 // Quantidade máxima de partidas
 
-bool estado = HIGH; // estado do led
+bool estadoLed = HIGH; // estado do led
+bool estadoBotao = false;
+
+int sequencia[6] = {};
+
+int rodada_atual = 0;
 
 void setup(){
 
@@ -28,5 +33,27 @@ void setup(){
 }
 
 void loop(){
+
+}
+
+void sequencia_inicial(){
+
+  digitalWrite(PINO_LED_1,estadoLed);
+  delay(500);
+
+  digitalWrite(PINO_LED_2,estadoLed);
+  delay(500);
+
+  digitalWrite(PINO_LED_3,estadoLed);
+  delay(500);
+
+  digitalWrite(PINO_LED_1,!estadoLed);
+  delay(500);
+
+  digitalWrite(PINO_LED_2,!estadoLed);
+  delay(500);
+
+  digitalWrite(PINO_LED_3,!estadoLed);
+  delay(500);
 
 }
